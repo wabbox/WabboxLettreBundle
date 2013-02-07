@@ -1,0 +1,36 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Liste des messages{% endblock %}
+{% block title_nav %}Message{% endblock %}
+{% block body %}
+
+<h1>Message n° {{ entity.id }}</h1>
+
+<table class="ten">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ entity.email }}</td>
+        </tr>
+        <tr>
+            <th>Objet</th>
+            <td>{{ entity.objet }}</td>
+        </tr>
+        <tr>
+            <th>Message</th>
+            <td>{{ entity.message }}</td>
+        </tr>
+    </tbody>
+</table>
+<ul>
+    <li>
+        <a class="button" href="{{ path('contact_delete', { 'id': entity.id }) }}">supprimer</a>
+    </li>
+    <li>
+        <a class="button" href="{{ path('contact_list') }}">Retour liste de messages</a>
+    </li>
+</ul>
+{% endblock %}

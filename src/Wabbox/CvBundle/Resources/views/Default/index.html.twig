@@ -1,0 +1,27 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Développeur d'application web{% endblock %}
+{% block title_nav %}Perrin Gontran{% endblock %}
+{% block body %}
+<header class="CvHeader">
+    <article>
+        <h1>Développeur d'application web</h1>
+        <p>Recherche stage en entreprise.</p>
+    </article>
+</header> 
+<section class="statut"> 
+    <article>
+        <dl>
+            <dt>Statut actuel</dt>
+            <dd>Formation "Développeur d'application web"</dd>
+        </dl>
+        <dl>
+            <dt>Lieu de la formation</dt>
+            <dd><a href="http://www.afip-formations.com/" title="afip" target="_blank">Afip</a> <a href="https://maps.google.fr/maps?f=q&hl=fr&q=111%20r%20du%201er%20Mars%201943%2069100%20Villeurbanne" title="afip adresse" target="_blank">111 r du 1er Mars 1943 69100 Villeurbanne</a></dd>
+        </dl>
+        <dl>
+            <dt>Recherche</dt>
+            <dd>Stage en entreprise du <time datetime="2013-02-21">21/02/2013</time> au <time datetime="2013-04-04">04/04/2013</time></dd>
+        </dl>
+    </article>
+</section> 
+{% endblock %}

@@ -1,0 +1,13 @@
+parameters:
+#    wabbox_user.example.class: Wabbox\UserBundle\Example
+
+services:
+#    wabbox_user.example:
+#        class: %wabbox_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    wabbox_user.registration.form.type:
+        class: Wabbox\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: wabbox_user_registration }

@@ -1,0 +1,30 @@
+contact:
+    pattern:  /
+    defaults: { _controller: "WabboxCvBundle:Contact:new" }
+
+contact_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "WabboxCvBundle:Contact:show" }
+
+contact_list:
+    pattern:  /list
+    defaults: { _controller: "WabboxCvBundle:Contact:index" }
+
+contact_create:
+    pattern:  /create
+    defaults: { _controller: "WabboxCvBundle:Contact:create" }
+    requirements: { _method: post }
+
+contact_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "WabboxCvBundle:Contact:edit" }
+
+contact_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "WabboxCvBundle:Contact:update" }
+    requirements: { _method: post }
+
+contact_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "WabboxCvBundle:Contact:delete" }
+    #requirements: { _method: post }

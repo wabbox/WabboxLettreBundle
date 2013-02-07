@@ -1,0 +1,15 @@
+{% extends "WabboxLettreBundle:Default:index.html.twig" %}  
+    {% block containt %}
+<h1>Création</h1>
+
+{% use "form_div_layout.html.twig" %}
+{% form_theme form 'WabboxLettreBundle:Form:fields.html.twig' %}
+ 
+ <h3>Information : {{ personne_type }}</h3>
+<form action="{{ path('personne_create', { 'personne_type': personne_type }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit" class="radius button">Créer</button>
+    </p>
+</form>
+{% endblock %}

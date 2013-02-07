@@ -1,0 +1,1 @@
+(function(b,a,c){b.fn.foundationAlerts=function(d){var e=b.extend({callback:b.noop},d);b(document).on("click",".alert-box a.close",function(f){f.preventDefault();b(this).closest(".alert-box").fadeOut(function(){b(this).remove();e.callback()})})}})(jQuery,this);

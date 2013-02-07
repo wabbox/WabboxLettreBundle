@@ -1,0 +1,20 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Contact{% endblock %}
+{% block title_nav %}Perrin Gontran{% endblock %}
+{% block body %}
+<header class="CvHeader">
+    <article>
+        <h1>Contact</h1>
+        <p>Laisser un message pour tout renseignement.</p>
+    </article>
+</header> 
+{% use "form_div_layout.html.twig" %}
+{% form_theme form 'WabboxLettreBundle:Form:fields.html.twig' %}
+    <form action="{{ path('contact_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">Envoyer</button>
+        </p>
+    </form>
+{% endblock %}
+

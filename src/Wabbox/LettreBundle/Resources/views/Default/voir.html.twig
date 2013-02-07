@@ -1,0 +1,25 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Générateur lettre{% endblock %}
+{% block title_nav %}WabboxLettre{% endblock %}
+{% block body %}
+{% block containt %}
+    <h1>{{ user.personne_id }}</h1>
+    <ul>
+        <li>{{ expediteur.nom }}</li>
+        <li>{{ expediteur.prenom }}</li>
+        <li>{{ expediteur.adresse }}</li>
+        <li>{{ expediteur.codePostal }}</li>
+        <li>{{ expediteur.telephone }}</li>
+        <li>{{ expediteur.ville }}</li>
+    </ul>
+    <ul>
+        <li>{{ destinataire.nom }}</li>
+        <li>{{ destinataire.prenom }}</li>
+        <li>{{ destinataire.adresse }}</li>
+        <li>{{ destinataire.codePostal }}</li>
+        <li>{{ destinataire.telephone }}</li>
+        <li>{{ destinataire.ville }}</li>
+    </ul>
+{% endblock %}
+</section> 
+{% endblock %}

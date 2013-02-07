@@ -1,0 +1,7 @@
+parameters:
+#    wabbox_cv.example.class: Wabbox\CvBundle\Example
+
+services:
+#    wabbox_cv.example:
+#        class: %wabbox_cv.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

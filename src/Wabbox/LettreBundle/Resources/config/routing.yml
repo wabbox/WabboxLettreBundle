@@ -1,0 +1,26 @@
+wabbox_lettre_homepage:
+    pattern:  /lettre/
+    defaults: { _controller: WabboxLettreBundle:Default:index }
+
+wabbox_lettre_voir:
+    pattern: /lettre/voir/{id_expediteur}/{id_destinataire}
+    defaults: { _controller: WabboxLettreBundle:Default:voir }
+    requirements:
+        id_destinataire: \d+
+        id_expediteur:   \d+
+
+wabbox_lettre_new:
+    pattern: /lettre/new/
+    defaults: { _controller: WabboxLettreBundle:Default:new }
+
+wabbox_lettre_update_expediteur:
+    pattern: /lettre/update/{id}
+    defaults: { _controller: WabboxLettreBundle:Default:update_expediteur }
+
+wabbox_lettre_personne:
+    resource: "@WabboxLettreBundle/Resources/config/routing/personne.yml"
+    prefix:   /personne
+
+wabbox_lettre_contennu:
+    resource: "@WabboxLettreBundle/Resources/config/routing/contenu.yml"
+    prefix:   /contenu

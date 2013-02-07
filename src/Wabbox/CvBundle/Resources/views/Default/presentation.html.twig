@@ -1,0 +1,34 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Présentation{% endblock %}
+{% block title_nav %}Perrin Gontran{% endblock %}
+{% block body %}
+<header class="CvHeader">
+    <article>
+        <h1>Vous parler un peu de moi</h1>
+        <p>Qui suis-je ?</p>
+    </article>
+</header> 
+<section class="statut"> 
+    <article>
+        <p>Voici maintenant presque 8 ans que j’ai envoyé mon premier “hello world” sur Internet Explorer 6 en tant qu’amateur.<br>La passion de l’informatique m’a été transmise par Mr Jean-Claude Bucaille administrateur réseaux.</p>
+        <p>Mon premier projet fut la réalisation d’une base de données référençant des films sous Access en VBA.</p>
+        <p>J’ai très vite été confronté aux limites de ce langage. Je me suis alors tourné vers les langages web.</p>
+        <p>Après de nombreuses années à suivre l’évolution du web 2.0 et à passer des nuits blanches sur les tutos déstinés aux programmeurs, j’ai décidé qu’il était temps de faire de ma passion mon métier.</p>
+    </article>
+</section>
+<section class="statut">
+    <article>
+        <h2>Personnalité</h2>
+        <p>De tempérament joyeux et créatif, j’aime améliorer le quotidien des gens.</p>
+        <p>Amoureux du travail bien fait, je suis organisé et méthodique.</p>
+        <p>Durant mon temps libre, je reste concentré en jouant aux échecs ou je m’évade en faisant du sport.</p>
+    </article>
+</section>
+<section class="statut">
+    <article>
+        <h2>Projet d'avenir</h2>
+        <p>Après avoir travaillé dans le bâtiment et l’industrie je me suis rendu compte que dans ces secteurs l’informatique pouvait être améliorée.</p>
+        <p>Mon souhait est de pouvoir concevoir des applications qui aideront les entreprises à se concentrer sur leurs produits en toute sérénité.</p>
+    </article>
+</section>
+{% endblock %}

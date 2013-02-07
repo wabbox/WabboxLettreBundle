@@ -1,0 +1,14 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Connexion{% endblock %}
+{% block title_nav %}Perrin Gontran{% endblock %}
+{% block body %}
+<header class="CvHeader">
+    <article>
+        <h1>Connectez-vous</h1>
+        <p>Pour pouvoir avoir un acces privilégié.</p>
+    </article>
+</header> 
+{% block content %}
+    {% block fos_user_content %}{% endblock %}
+{% endblock %}
+{% endblock %}

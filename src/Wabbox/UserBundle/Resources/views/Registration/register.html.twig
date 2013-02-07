@@ -1,0 +1,13 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Enregistrement{% endblock %}
+{% block title_nav %}Perrin Gontran{% endblock %}
+{% block body %}
+{% use "form_div_layout.html.twig" %}
+{% form_theme form 'WabboxLettreBundle:Form:fields.html.twig' %}
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+        {{ form_widget(form) }}
+        <div>
+            <input type="submit" class="radius button" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+        </div>
+    </form>
+{% endblock %}

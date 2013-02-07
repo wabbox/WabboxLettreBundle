@@ -1,0 +1,30 @@
+contenu:
+    pattern:  /
+    defaults: { _controller: "WabboxLettreBundle:Contenu:index" }
+
+contenu_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "WabboxLettreBundle:Contenu:show" }
+
+contenu_new:
+    pattern:  /new
+    defaults: { _controller: "WabboxLettreBundle:Contenu:new" }
+
+contenu_create:
+    pattern:  /create
+    defaults: { _controller: "WabboxLettreBundle:Contenu:create" }
+    requirements: { _method: post }
+
+contenu_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "WabboxLettreBundle:Contenu:edit" }
+
+contenu_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "WabboxLettreBundle:Contenu:update" }
+    requirements: { _method: post }
+
+contenu_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "WabboxLettreBundle:Contenu:delete" }
+    requirements: { _method: post }

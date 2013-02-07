@@ -1,0 +1,39 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Liste des messages{% endblock %}
+{% block title_nav %}Message{% endblock %}
+{% block body %}
+<h1>Liste des messages</h1>
+
+<table class="eight">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Objet</th>
+            <th>Message</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('contact_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.email }}</td>
+            <td>{{ entity.objet }}</td>
+            <td>{{ entity.message }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a  class="button" href="{{ path('contact_show', { 'id': entity.id }) }}">voir</a>
+                    </li>
+                    <li>
+                        <a  class="button" href="{{ path('contact_delete', { 'id': entity.id }) }}">supprimer</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{% block title %}{% endblock %}</title>
+  {% stylesheets 'sass/*.scss' output='css/all.css' %}
+  <link rel="stylesheet" href="{{ asset_url }}" />
+  {% endstylesheets %}
+  {% javascripts 'js/foundation/modernizr.foundation.js' filter='?yui_js' output='js/modernizr.js' %}
+  <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+  <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    {% block layout %}{% endblock %}
+    {# 'js/foundation/jquery.foundation.navigation.js'
+        'js/foundation/jquery.foundation.orbit.js'
+        'js/foundation/jquery.foundation.reveal.js'
+        'js/foundation/jquery.foundation.tabs.js'
+        'js/foundation/jquery.foundation.tooltips.js'
+        'js/foundation/jquery.foundation.joyride.js'
+        'js/foundation/jquery.foundation.magellan.js'
+        'js/foundation/jquery.foundation.mediaQueryToggle.js' 
+        'js/foundation/jquery.foundation.accordion.js'
+        #}
+      {% javascripts
+        'js/foundation/jquery.js'
+        'js/foundation/app.js'
+        'js/foundation/jquery.cookie.js'
+        'js/foundation/jquery.event.move.js'
+        'js/foundation/jquery.event.swipe.js'
+        'js/foundation/jquery.foundation.topbar.js'
+        'js/foundation/jquery.placeholder.js'
+        'js/foundation/jquery.foundation.reveal.js'
+        'js/foundation/jquery.foundation.alerts.js'
+        'js/foundation/jquery.foundation.buttons.js'
+        'js/foundation/jquery.foundation.clearing.js'
+        'js/foundation/jquery.foundation.forms.js'
+     
+        filter='?yui_js'
+        output='js/all.js'
+      %}
+      <script src="{{ asset_url }}"></script>
+      {% endjavascripts %}
+      {% block script %}{% endblock %}
+    </body>
+    </html>

@@ -1,0 +1,15 @@
+wabbox_cv_homepage:
+    pattern:  /
+    defaults: { _controller: WabboxCvBundle:Default:index }
+
+wabbox_cv_presentation:
+    pattern:  /presentation
+    defaults: { _controller: WabboxCvBundle:Default:presentation }
+
+wabbox_cv_competence:
+    pattern:  /competence
+    defaults: { _controller: WabboxCvBundle:Default:competence }
+
+WabboxCvBundle_contact:
+    resource: "@WabboxCvBundle/Resources/config/routing/contact.yml"
+    prefix:   /contact

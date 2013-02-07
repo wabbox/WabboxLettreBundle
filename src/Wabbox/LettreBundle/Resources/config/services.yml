@@ -1,0 +1,7 @@
+parameters:
+#    wabbox_lettre.example.class: Wabbox\LettreBundle\Example
+
+services:
+#    wabbox_lettre.example:
+#        class: %wabbox_lettre.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

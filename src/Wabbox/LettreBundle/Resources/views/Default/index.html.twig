@@ -1,0 +1,31 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Générateur lettre{% endblock %}
+{% block title_nav %}WabboxLettre{% endblock %}
+{% block body %}
+<header>
+    <h1>Générateur de lettre</h1>
+</header> 
+<section class="contenu"> 
+    {% block containt %}
+    <h1>Personne création</h1>
+
+    {% use "form_div_layout.html.twig" %}
+    {% form_theme form_expediteur 'WabboxLettreBundle:Form:fields.html.twig' %}
+
+
+    <form action="{{ path('personne_create', { 'personne_type': 'expediteur' }) }}" method="post" {{ form_enctype(form_expediteur) }}>
+        {{ form_widget(form_expediteur) }}
+        <p>
+            <button type="submit" class="radius button">Créer</button>
+        </p>
+    </form>
+    <form action="{{ path('personne_create', { 'personne_type': 'destinataire' }) }}" method="post" {{ form_enctype(form_destinataire) }}>
+        {{ form_widget(form_destinataire) }}
+        <p>
+            <button type="submit" class="radius button">Créer</button>
+        </p>
+    </form>
+
+    {% endblock %}
+</section> 
+{% endblock %}

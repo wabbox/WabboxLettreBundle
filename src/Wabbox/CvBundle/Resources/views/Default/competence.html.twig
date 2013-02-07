@@ -1,0 +1,62 @@
+{% extends "::layout.html.twig" %}
+{% block title %}{{ parent() }} - Compétences{% endblock %}
+{% block title_nav %}Perrin Gontran{% endblock %}
+{% block body %}
+<header class="CvHeader">
+    <article>
+        <h1>Mes compétences</h1>
+        <p>que je m'efforce à améliorer.</p>
+    </article>
+</header> 
+<section class="competence"> 
+    <article>
+        <dl>
+            <dt>Environements</dt>
+            <dd>Linux</dd>
+            <dd>Windows</dd>
+        </dl>
+        <dl>
+            <dt>Langages</dt>
+            <dd>XHTML &amp; HTML5</dd>
+            <dd>CSS3</dd>
+            <dd>JavaScript</dd>
+            <dd>PHP</dd>
+            <dd>SQL</dd>
+            <dd>Python (débutant)</dd>
+            <dl>
+                <dt>Méta-langages</dt>
+                <dd>SCSS</dd>
+            </dl>
+        </dl>
+        <dl>
+            <dt>SGBD</dt>
+            <dd>MySQL</dd>
+            <dd>MongoDB</dd>
+        </dl>
+    </article><article>
+        <dl>
+            <dt>Frameworks</dt>
+            <dd>Symfony 2.x</dd>
+            <dd>jQuery</dd>
+            <dd>AngularJS, Node.js, PhantomJS et CasperJS (débutant)</dd>
+            <dd>Compass, Foundation, Blueprint, Bootstrap</dd>
+        </dl>
+        <dl>
+            <dt>CMS (en cours d'apprentissage)</dt>
+            <dd>Joomla</dd>
+            <dd>Wordpress</dd>
+            <dd>Drupal</dd>
+        </dl>
+        <dl>
+            <dt>Suite Adobe</dt>
+            <dd>Photoshop</dd>
+            <dd>Illustrator</dd>
+            <dd>Dreamweaver</dd>
+            <dt>Outils divers</dt>
+            <dd>Git</dd>
+            <dd>Sublime Text</dd>
+            <dd>Console2</dd>
+        </dl>
+    </article>
+</section> 
+{% endblock %}

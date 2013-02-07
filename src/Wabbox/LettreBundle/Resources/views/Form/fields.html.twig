@@ -1,0 +1,46 @@
+{# app/Resources/views/Form/fields.html.twig #}
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            <ul>
+                {% for error in errors %}
+                    <li>
+                        <small class="error">{{
+                            error.messagePluralization is null
+                            ? error.messageTemplate|trans(error.messageParameters, 'validators')
+                            : error.messageTemplate|transchoice(error.messagePluralization, error.messageParameters, 'validators')
+                        }}</small>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}
+
+{% block form_row %}
+    {% spaceless %}
+        <div{% if errors|length > 0 %} class="error"{% endif %}>
+            {{ form_label(form) }}
+            {{ form_widget(form) }}
+            {{ form_errors(form) }}
+        </div>
+        
+    {% endspaceless %}
+{% endblock form_row %}  
+
+{% block form_label %}
+{% spaceless %}
+    {% if not compound %}
+        {% set label_attr = label_attr|merge({'for': id}) %}
+    {% endif %}
+    {% if required %}
+        {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' required')|trim}) %}
+    {% endif %}
+    {% if label is empty %}
+        {% set label = name|humanize %}
+    {% endif %}
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain) }}{% if required %}<span class="required" title="Ce champ est obligatoire"> *</span>{% endif %}</label>
+{% endspaceless %}
+{% endblock form_label %}

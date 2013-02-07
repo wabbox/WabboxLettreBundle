@@ -1,0 +1,55 @@
+{% extends "WabboxLettreBundle:Default:index.html.twig" %}  
+    {% block containt %}
+<h3>Contenu création</h3>
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Codepostal</th>
+            <th>Telephone</th>
+            <th>Ville</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for destinataire in destinataires %}
+        <tr>
+            <td>{{ destinataire.nom }}</td>
+            <td>{{ destinataire.prenom }}</td>
+            <td>{{ destinataire.adresse }}</td>
+            <td>{{ destinataire.codePostal }}</td>
+            <td>{{ destinataire.telephone }}</td>
+            <td>{{ destinataire.ville }}</td>
+            <td>{{ destinataire.email }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('personne_show', { 'id': destinataire.id }) }}">Voir</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('personne_edit', { 'id': destinataire.id }) }}">Editer</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<form action="{{ path('contenu_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit" class="radius button">Créer</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('contenu') }}">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+{% endblock %}

@@ -1,0 +1,39 @@
+<h3>Liste des destinataires enregistrés</h3>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Codepostal</th>
+            <th>Telephone</th>
+            <th>Ville</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for destinataire in destinataires %}
+        <tr>
+            <td><a href="{{ path('personne_show', { 'id': destinataire.id }) }}">{{ destinataire.id }}</a></td>
+            <td>{{ destinataire.nom }}</td>
+            <td>{{ destinataire.prenom }}</td>
+            <td>{{ destinataire.adresse }}</td>
+            <td>{{ destinataire.codePostal }}</td>
+            <td>{{ destinataire.telephone }}</td>
+            <td>{{ destinataire.ville }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('personne_show', { 'id': destinataire.id }) }}">Voir</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('personne_edit', { 'id': destinataire.id }) }}">Editer</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

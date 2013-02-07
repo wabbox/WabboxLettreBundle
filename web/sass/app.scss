@@ -1,0 +1,189 @@
+// Your custom settings file to override Foundation defaults
+@import "settings";
+
+// Comment out this import if you are customizing you imports below
+@import "foundation";
+@import "compass/css3/font-face";
+@import "compass/utilities/general/float";
+@import "compass/layout.scss";
+@import "compass/layout/sticky-footer";
+
+// ----------------------------------------
+// Import specific parts of Foundation by commenting the import "foundation"
+// and uncommenting what you want below. You must uncomment the following if customizing
+
+// @import "compass/css3";
+// @import "foundation/settings";
+// @import "foundation/functions/all";
+
+// Control which mixins you have access too
+
+// @import "foundation/mixins/clearfix";
+// @import "foundation/mixins/css-triangle";
+// @import "foundation/mixins/font-size";
+
+// Must include next two for semantic grid to work
+
+// @import "foundation/mixins/respond-to";
+// @import "foundation/mixins/semantic-grid";
+
+// @import "modular-scale";
+// @import "foundation/common/globals";
+
+// Must include the grid for any responsiveness
+
+// @import "foundation/components/grid";
+
+// Control which common styles get compiled
+
+// @import "foundation/common/typography";
+// @import "foundation/common/forms";
+
+// Control which components you get if customizing
+
+// @import "foundation/components/modules/buttons";
+// @import "foundation/components/modules/tabs";
+// @import "foundation/components/modules/ui";
+// @import "foundation/components/modules/topbar";
+// @import "foundation/components/modules/navbar";
+// @import "foundation/components/modules/orbit";
+// @import "foundation/components/modules/reveal";
+// @import "foundation/components/modules/offcanvas";
+
+// Media Queries Overrides
+// @import "foundation/components/modules/mqueries";
+
+//import fonts face
+
+@include font-face (
+    "museo_sans_500regular",
+    font-files("mf405599-webfont.woff",
+                "mf405599-webfont.ttf",
+                "mf405599-webfont.svg#museo_sans_500regular"),
+                "mf405599-webfont.eot"
+        );
+@include font-face (
+    "bariol_regularregular",
+    font-files("bariol_regular-webfont.woff",
+                "bariol_regular-webfont.ttf",
+                "bariol_regular-webfont.svg#bariol_regularregular"),
+                "bariol_regular-webfont.eot"
+        );
+
+//mixin gradient
+@mixin background-gradient($from, $to){
+        @include filter-gradient($from, $to); // IE6-8
+        @include background-image(linear-gradient($from, $to));
+    }
+.bloc {
+    @include border-radius(25px);
+    @include opacity(0.5);
+    @include box-shadow(rgba(0, 0, 0, 0.5) 0 2px 10px inset, rgba(255, 255, 255, 0.3) 0 1px 2px 0px, rgba(0, 0, 0, 0.8) 0 0 0 1px inset);
+    border: 1px solid #121212;
+    padding: 40px;
+    margin-bottom: 30px !important;
+
+}
+body{
+    background: $greyDark;
+}
+
+.contenu{
+    @include outerRow();
+    @include column(10, center);
+}
+.CvHeader{
+    @include outerRow();
+    @include background-gradient($bleu3, $bleu2);
+    @include box-shadow(inset 0 3px 7px rgba(0, 0, 0, .2),inset 0 -3px 7px rgba(0, 0, 0, .2));
+    margin-bottom :50px;
+    article{
+        color: $white;
+        @include column(8);
+        @include mobileColumn(3);
+        @include offsetBy(2);
+    }    
+    h1{
+        color: $white;
+        @include font-size(50);
+        @include single-text-shadow;
+    }
+    p{
+        @include font-size(40);
+        @include single-text-shadow;
+    }
+}  
+.competence {
+    @extend .statut;
+    article {
+        @include column(6);
+    }
+    dl{
+        dt {
+            color: $bleu2;
+        }
+        dd {
+            padding-left: 10px;
+        }
+    }
+}
+.statut {
+    @include outerRow();
+    @include column(6,center);
+    //@include mobileColumn(3,center);
+    @extend .bloc;
+    margin-bottom: 15px !important;
+}
+dl {
+    //@include column(7,center);
+    dt {
+        font-weight: bold;
+        @include font-size(18);
+    }
+    dd {
+        @include font-size(16);
+    }
+}
+.reveal-modal {
+    color : black !important;
+}
+.reveal-modal h2 {
+    color : black !important;
+}
+.error input, input.error, .error textarea, textarea.error { background: $inputBgColor; color: rgba(198, 15, 19, 0.5); }
+.error label, label.error { color: $labelFontColor;}
+//.error input:focus, input.error:focus, .error textarea:focus, textarea.error:focus { background: $inputBgColor; border-color: $alertColor; }
+form {
+    @include outerRow();
+    @include column(8, center);
+    @extend .bloc;
+    ul, li {
+        list-style-type:none;
+    }
+    input[type=submit], button {
+        @extend .radius !optional;
+        @extend .button !optional;
+    }
+}
+hr {
+    @include clearfix();
+    border: solid rgba(8, 5, 6, 0.4);
+    border-width: 0;
+
+}
+footer {
+    @include outerRow();
+    @include mobileColumn(4);
+    margin-top: 90px !important;
+    background: #222; 
+
+    p {
+        @include column(4);
+    }
+    ul {
+        @include column(5);
+        @include offsetBy(3);
+        @extend .hide-for-small !optional;
+        @extend .inline-list;
+    }
+}

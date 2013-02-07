@@ -1,0 +1,35 @@
+personne:
+    pattern:  /
+    defaults: { _controller: "WabboxLettreBundle:Personne:index" }
+
+personne_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "WabboxLettreBundle:Personne:show" }
+
+personne_new:
+    pattern:  /new/{personne_type}
+    defaults: { _controller: "WabboxLettreBundle:Personne:new" }
+    requirements:
+        personne_type: expediteur|destinataire
+
+personne_create:
+    pattern:  /create/{personne_type}
+    defaults: { _controller: "WabboxLettreBundle:Personne:create" }
+    requirements: { _method: post }
+    requirements:
+        personne_type: expediteur|destinataire
+
+personne_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "WabboxLettreBundle:Personne:edit" }
+
+personne_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "WabboxLettreBundle:Personne:update" }
+    requirements: { _method: post }
+
+personne_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "WabboxLettreBundle:Personne:delete" }
+    requirements: 
+        id : \d+
