@@ -1,0 +1,36 @@
+{# src/Wabbox/LettreBundle/Resources/views/Default/destinataires.html.twig #}
+<section id="destinataire">
+	<ul class="accordion">
+		<h2>Liste des contacts</h2>
+		{% for destinataire in destinataires %}
+		<li>
+			<div class="title">
+				<h5>{{ destinataire.nom }} {{ destinataire.Prenom }}</h5>
+			</div>
+			<div class="content">
+				<ul>
+					<li>{{ expediteur.adresse }}</li>
+					<li>{{ expediteur.codePostal }} {{ expediteur.ville }}</li>
+					<li>{{ expediteur.telephone }}</li>
+					<li>{{ expediteur.email }}</li>
+				</ul>
+				<ul class="button-group radius">
+					<li><a href="{{ path('personne_edit', { 'id': destinataire.id }) }}" class="button radius">Modifier</a></li>
+					<li><a href="{{ path('personne_delete', { 'id': destinataire.id }) }}" class="button radius">Supprimer</a></li>
+					<li><a href="#" class="button radius">Button 3</a></li>
+				</ul>
+			</div>
+		</li>
+		{% else %}
+		<li>
+			<div class="title">
+				<h5>Pas de destinataire trouvé.</h5>
+			</div>
+			<div class="content">
+				<p>Crée un nouveau contact</p>
+			</div>
+		</li>
+	{% endfor %}
+	</ul>
+	<a href="{{ path('personne_new', { 'personne_type': 'destinataire' }) }}" class="button radius">Créer un contact</a>
+</section>

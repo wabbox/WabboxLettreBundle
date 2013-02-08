@@ -37,6 +37,7 @@ class DefaultController extends Controller
         $user_id = $this->container->get('security.context')->getToken()->getUser()->getId();
         $em = $this->getDoctrine()->getManager();
         $testExpediteur = $em->getRepository('WabboxLettreBundle:Personne')->getPersonneUser(true, $user_id);
+        $destinataires = $em->getRepository('WabboxLettreBundle:Personne')->getPersonneUser(false, $user_id);
         if (!$testExpediteur) {
             $personne_type = 'expediteur';
             $personne = new Personne();
@@ -50,11 +51,10 @@ class DefaultController extends Controller
         }
         $expediteur = $em->getRepository('WabboxLettreBundle:Personne')->getExpediteur($user_id);
         $editExpediteur = $this->createForm(new PersonneType(), $expediteur);
-        $destinataires = $em->getRepository('WabboxLettreBundle:Personne')->getPersonneUser(false, $user_id);
         return $this->render('WabboxLettreBundle:Default:new.html.twig', array(
-            'expediteur'        => $expediteur,                     
-            'destinataires'      => $destinataires,                   
-            'edit_form' => $editExpediteur->createView(),
+            'expediteur'    => $expediteur,                     
+            'destinataires' => $destinataires,                   
+            'edit_form'     => $editExpediteur->createView(),
             ));
 
     }

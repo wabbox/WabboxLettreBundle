@@ -3,8 +3,9 @@
 {% extends "WabboxLettreBundle:Default:index.html.twig" %}  
 {% block containt %}
 <section>
-{% include "WabboxLettreBundle:Default:expediteur.html.twig" %}
-<a href="#" class="button" data-reveal-id="myModal">Modifier</a>
+  {% include "WabboxLettreBundle:Default:expediteur.html.twig" %}
+  <a href="#" class="button" data-reveal-id="myModal">Modifier</a>
+  {% include "WabboxLettreBundle:Default:destinataires.html.twig" %}
 </section>
 <div id="myModal" class="reveal-modal expand">
   <h2>Modification expéditeur</h2>
