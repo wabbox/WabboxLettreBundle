@@ -71,7 +71,7 @@ assetic:
     filters:
         cssrewrite: ~
         compass:
-            bin:     "C:/Ruby193/bin/compass"
+            bin:     "%assectic_compass%"
             plugins: ['zurb-foundation']
             #apply_to: "/\.s[ac]ss$/"
             apply_to: "\.scss$"

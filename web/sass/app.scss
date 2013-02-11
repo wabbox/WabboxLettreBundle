@@ -150,6 +150,9 @@ dl {
 .reveal-modal h2 {
     color : black !important;
 }
+.accordion, .accordion h5 {
+    color : black !important;
+}
 .error input, input.error, .error textarea, textarea.error { background: $inputBgColor; color: rgba(198, 15, 19, 0.5); }
 .error label, label.error { color: $labelFontColor;}
 //.error input:focus, input.error:focus, .error textarea:focus, textarea.error:focus { background: $inputBgColor; border-color: $alertColor; }
