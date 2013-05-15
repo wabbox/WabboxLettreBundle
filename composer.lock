@@ -1,5 +1,5 @@
 {
-    "hash": "85c761931cbced8ee0e867f96519dae1",
+    "hash": "e854b5461dfc97b52cc44e65193c0a34",
     "packages": [
         {
             "name": "doctrine/common",
@@ -72,23 +72,23 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.3.2",
+            "version": "2.3.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/dbal",
-                "reference": "2.3.2"
+                "url": "https://github.com/doctrine/dbal.git",
+                "reference": "2.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/2.3.2.zip",
-                "reference": "2.3.2",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2.3.4",
+                "reference": "2.3.4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "doctrine/common": "2.3.*"
+                "doctrine/common": ">=2.3.0,<2.5-dev"
             },
-            "time": "2013-01-07 20:03:43",
+            "time": "2013-05-11 07:45:37",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1221,26 +1221,26 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.12.1",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
-                "url": "git://github.com/fabpot/Twig.git",
-                "reference": "v1.12.1"
+                "url": "https://github.com/fabpot/Twig.git",
+                "reference": "v1.13.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/v1.12.1.zip",
-                "reference": "v1.12.1",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/v1.13.0",
+                "reference": "v1.13.0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-01-15 20:03:52",
+            "time": "2013-05-10 15:12:43",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.12-dev"
+                    "dev-master": "1.13-dev"
                 }
             },
             "autoload": {
@@ -1267,58 +1267,6 @@
             "keywords": [
                 "templating"
             ]
-        },
-        {
-            "name": "winzou/console-bundle",
-            "version": "dev-master",
-            "target-dir": "CoreSphere/ConsoleBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/winzou/ConsoleBundle",
-                "reference": "4a6625c617c72d6c026a303b960a4f099a19b2d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/winzou/ConsoleBundle/archive/4a6625c617c72d6c026a303b960a4f099a19b2d9.zip",
-                "reference": "4a6625c617c72d6c026a303b960a4f099a19b2d9",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "symfony/symfony": ">=2.1"
-            },
-            "time": "2012-10-16 17:27:54",
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "CoreSphere\\ConsoleBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Laszlo Korte",
-                    "email": "coresphere@laszlokorte.de"
-                },
-                {
-                    "name": "Marmus Ullman",
-                    "email": "mail@markus-ullmann.de"
-                },
-                {
-                    "name": "Alexandre winzou Bacco",
-                    "homepage": "http://www.tutoriel-symfony2.fr/"
-                }
-            ],
-            "description": "Commandline interface in browser for Symfony2.",
-            "homepage": "https://github.com/winzou/ConsoleBundle",
-            "keywords": [
-                "Symfony2",
-                "console",
-                "command"
-            ]
         }
     ],
     "packages-dev": null,
@@ -1328,7 +1276,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "twig/extensions": 20,
-        "kriswallsmith/assetic": 20,
-        "winzou/console-bundle": 20
+        "kriswallsmith/assetic": 20
     }
 }
